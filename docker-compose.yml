@@ -1,0 +1,14 @@
+services:
+  rag-app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
+      - ./chroma_db:/app/chroma_db
+    env_file:
+      - .env
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    restart: unless-stopped

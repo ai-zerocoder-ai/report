@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>progaz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Добавляем иконку для мобильных устройств -->
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='icon.png') }}">
+    <!-- Добавляем метатег для полноэкранного режима на iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 progaz</h1>
+        <p>Основано на семантическом поиске информации (LLM + RAG + ChromaDB)</p>
+
+        <div class="chat-container">
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot-message">
+                    База знаний загружена. Задайте вопрос по корпоративной отчетности, например: "объем добычи газа" или "уровень газификации".
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="question-input" placeholder="Введите Ваш вопрос..." autocomplete="off">
+                <button id="send-btn">Отправить</button>
+            </div>
+        </div>
+
+        <div class="status">
+            Статус: <span id="status">Загрузка...</span>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

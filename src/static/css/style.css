@@ -1,0 +1,187 @@
+/* Базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Calibri, sans-serif;
+}
+
+/* Светло‑серый фон страницы */
+body {
+    background: #f2f4f7;
+    min-height: 100vh;
+    padding: 10px;
+    color: #333333;
+}
+
+/* Карточка приложения */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Заголовок — Pantone 300, НЕ жирный */
+h1 {
+    text-align: center;
+    color: #0072CE; /* Pantone 300 (approx) */
+    font-weight: 400;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+/* Сабтайтл */
+p {
+    text-align: center;
+    color: #666666;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* Чат-блок */
+.chat-container {
+    border: 1px solid #e2e6ea;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    background: #fafafa;
+}
+
+.chat-messages {
+    height: 50vh;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+/* Сообщения */
+.message {
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    max-width: 85%;
+    word-wrap: break-word;
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.user-message {
+    background: #0072CE; /* Pantone 300 */
+    color: #ffffff;
+    margin-left: auto;
+}
+
+.bot-message {
+    background: #e9ecef;
+    color: #333333;
+    margin-right: auto;
+}
+
+/* Поле ввода и кнопка */
+.input-area {
+    display: flex;
+    padding: 12px;
+    background: #ffffff;
+    border-top: 1px solid #e2e6ea;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#question-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #cfd6de;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    background: #ffffff;
+}
+
+#question-input:focus {
+    border-color: #0072CE;
+    box-shadow: 0 0 0 3px rgba(0, 114, 206, 0.15);
+}
+
+/* Кнопка — Pantone 300 */
+#send-btn {
+    padding: 12px 20px;
+    background: #0072CE;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s ease, transform 0.05s ease;
+    width: 100%;
+}
+
+#send-btn:hover {
+    background: #005FA3; /* темнее на hover */
+}
+
+#send-btn:active {
+    transform: translateY(1px);
+}
+
+#send-btn:disabled {
+    background: #9bb8d6;
+    cursor: not-allowed;
+}
+
+/* Статусная плашка */
+.status {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 8px;
+    background: #f1f3f5;
+    color: #5f6c7b;
+    border: 1px solid #e2e6ea;
+}
+
+/* Адаптация */
+@media (min-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 24px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .input-area {
+        flex-direction: row;
+    }
+    #send-btn {
+        width: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 860px;
+    }
+    .chat-messages {
+        height: 420px;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        padding: 6px;
+    }
+    .container {
+        padding: 16px;
+        border-radius: 12px;
+    }
+    h1 {
+        font-size: 1.4rem;
+    }
+    .message {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
